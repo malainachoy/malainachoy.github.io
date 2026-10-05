@@ -26,6 +26,7 @@
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
     /* NAVIGATION */
@@ -37,11 +38,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .logo,
-    .back {
-      text-decoration: none;
     }
 
     .logo {
@@ -258,8 +254,6 @@
       font-size: 0.9rem;
     }
 
-    /* TAKEAWAY */
-
     .takeaway {
       margin-top: 70px;
       max-width: 850px;
@@ -299,10 +293,23 @@
       font-size: 0.9rem;
     }
 
-    /* OUTCOME */
+    /* RESEARCH COMMUNICATION */
 
     .outcome {
       border-top: 1px solid #ddd;
+    }
+
+    .presentation-photo {
+      width: 100%;
+    }
+
+    .presentation-photo img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+      max-height: 650px;
+      object-position: center;
     }
 
     /* FOOTER */
@@ -317,7 +324,6 @@
     }
 
     footer a {
-      text-decoration: none;
       font-weight: 600;
     }
 
@@ -499,8 +505,6 @@
 
   <div class="design-showcase">
 
-    <!-- TEG PADS -->
-
     <div class="visual-card">
 
       <img
@@ -515,8 +519,6 @@
     </div>
 
 
-    <!-- CAD -->
-
     <div class="visual-card">
 
       <img
@@ -530,8 +532,6 @@
 
     </div>
 
-
-    <!-- SOLE -->
 
     <div class="visual-card sole-card">
 
@@ -587,15 +587,10 @@
 
     <div class="testing-grid">
 
-      <!-- ARDUINO / DATA ACQUISITION -->
-
       <img
         src="images/experimental-set-up-b.png.png"
         alt="Data acquisition electronics used during testing"
       >
-
-
-      <!-- KEITHLEY INSTRUMENT -->
 
       <img
         src="images/experimental-set-up-a.png.png"
@@ -633,8 +628,6 @@
 
   <div class="results-grid">
 
-    <!-- CHANNEL A -->
-
     <div class="result-card">
 
       <img
@@ -656,8 +649,6 @@
 
     </div>
 
-
-    <!-- CHANNEL B -->
 
     <div class="result-card">
 
@@ -681,8 +672,6 @@
     </div>
 
 
-    <!-- CHANNEL C -->
-
     <div class="result-card">
 
       <img
@@ -704,8 +693,6 @@
 
     </div>
 
-
-    <!-- CHANNEL D -->
 
     <div class="result-card">
 
@@ -801,21 +788,13 @@
     <div class="skills">
 
       <span class="skill">Biomechanics</span>
-
       <span class="skill">Wearable Sensors</span>
-
       <span class="skill">Load Cells</span>
-
       <span class="skill">Triboelectric Generators</span>
-
       <span class="skill">CAD</span>
-
       <span class="skill">Prototyping</span>
-
       <span class="skill">Experimental Testing</span>
-
       <span class="skill">Data Acquisition</span>
-
       <span class="skill">Data Analysis</span>
 
     </div>
@@ -825,23 +804,42 @@
 </section>
 
 
-<!-- OUTCOME -->
+<!-- RESEARCH COMMUNICATION -->
 
 <section class="section container outcome">
 
-  <p class="label">
-    Outcome
-  </p>
+  <div class="two-column">
 
-  <h2>
-    Presented at Western University's Undergraduate Summer
-    Research Symposium.
-  </h2>
+    <div>
 
-  <p class="body-copy">
-    Completed through Western Engineering's undergraduate summer
-    research program in 2025.
-  </p>
+      <p class="label">
+        07 / Research Communication
+      </p>
+
+      <h2>
+        From experimental testing to research presentation.
+      </h2>
+
+      <p class="body-copy">
+        Presented the project at Western University's Undergraduate
+        Summer Research Symposium, communicating the design,
+        experimental methodology, results, and biomedical significance
+        of the wearable sensing system.
+      </p>
+
+    </div>
+
+
+    <div class="presentation-photo">
+
+      <img
+        src="images/sole-pres.jpg"
+        alt="Presenting wearable biomechanical sensing research at Western University's Undergraduate Summer Research Symposium"
+      >
+
+    </div>
+
+  </div>
 
 </section>
 
