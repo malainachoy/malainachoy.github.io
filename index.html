@@ -42,8 +42,8 @@
     }
 
     .section {
-      padding-top: 125px;
-      padding-bottom: 125px;
+      padding-top: 120px;
+      padding-bottom: 120px;
     }
 
     .label {
@@ -55,7 +55,9 @@
       margin-bottom: 18px;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       max-width: 1200px;
@@ -77,11 +79,17 @@
       font-size: 0.9rem;
     }
 
+    .nav-links a {
+      transition: opacity 0.2s ease;
+    }
+
     .nav-links a:hover {
       opacity: 0.5;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 88vh;
@@ -112,7 +120,7 @@
 
     .hero-bottom {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 80px;
       align-items: end;
     }
@@ -125,18 +133,20 @@
 
     .hero-focus {
       color: #666;
-      max-width: 400px;
+      max-width: 420px;
       justify-self: end;
     }
 
-    /* SECTION HEADER */
+    /* =========================
+       SECTION HEADER
+    ========================= */
 
     .section-header {
       display: flex;
       justify-content: space-between;
       align-items: end;
       gap: 40px;
-      padding-bottom: 50px;
+      padding-bottom: 55px;
     }
 
     .section-header h2 {
@@ -145,12 +155,14 @@
       letter-spacing: -4px;
     }
 
-    .section-header p:last-child {
+    .section-header > p {
       color: #666;
-      max-width: 360px;
+      max-width: 390px;
     }
 
-    /* PROJECTS */
+    /* =========================
+       PROJECTS
+    ========================= */
 
     .projects {
       background: #f5f5f3;
@@ -159,7 +171,7 @@
     .project {
       border-top: 1px solid #cfcfcb;
       padding-top: 75px;
-      padding-bottom: 95px;
+      padding-bottom: 105px;
     }
 
     .project:last-child {
@@ -177,6 +189,7 @@
     .project-number {
       font-size: 0.78rem;
       color: #777;
+      letter-spacing: 0.3px;
     }
 
     .project-title h3 {
@@ -197,24 +210,37 @@
       font-weight: 700;
       font-size: 0.9rem;
       padding-top: 8px;
+      transition: opacity 0.2s ease;
     }
 
     .project-link:hover {
       opacity: 0.5;
     }
 
-    /* ULTRASOUND CARD */
+    /* =========================
+       PROJECT 01 — ULTRASOUND
+    ========================= */
 
     .ultrasound-card {
-      min-height: 500px;
+      min-height: 480px;
       background: #181818;
-      color: white;
+      color: #ffffff;
       border-radius: 8px;
+      padding: 55px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 55px;
-      overflow: hidden;
+      transition: transform 0.25s ease;
+    }
+
+    .ultrasound-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .ultrasound-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
     }
 
     .ultrasound-question {
@@ -224,10 +250,19 @@
       letter-spacing: -2px;
     }
 
+    .current-marker {
+      color: #888;
+      font-size: 0.72rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding-top: 10px;
+    }
+
     .ultrasound-flow {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 18px;
       margin-top: 80px;
     }
 
@@ -245,86 +280,97 @@
       font-size: 0.75rem;
     }
 
-    /* WEARABLE COLLAGE */
+    /* =========================
+       PROJECT 02 — WEARABLE
+    ========================= */
 
-    .wearable-collage {
+    .wearable-preview {
+      max-width: 980px;
+      margin-left: auto;
       display: grid;
-      grid-template-columns: 1fr 1fr 0.8fr;
-      grid-template-rows: 250px 250px;
-      gap: 12px;
-    }
-
-    .wearable-image {
+      grid-template-columns: 0.72fr 1.28fr;
+      min-height: 355px;
       background: #ffffff;
-      border-radius: 6px;
+      border-radius: 8px;
       overflow: hidden;
+      transition: transform 0.25s ease;
     }
 
-    .wearable-image img {
+    .wearable-preview:hover {
+      transform: translateY(-4px);
+    }
+
+    .wearable-preview-copy {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wearable-preview-label {
+      color: #999;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .wearable-preview-copy h4 {
+      font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-top: 25px;
+    }
+
+    .wearable-preview-bottom p {
+      color: #666;
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+
+    .wearable-preview-bottom span {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .wearable-preview-image {
+      background: #eeeeeb;
+      height: 355px;
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wearable-preview-image img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 18px;
     }
 
-    .wearable-image.hardware {
-      grid-row: 1 / 3;
-    }
-
-    .wearable-image.cad {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .wearable-image.result {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .wearable-summary {
-      grid-column: 3;
-      grid-row: 1 / 3;
-      background: #181818;
-      color: white;
-      padding: 35px;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .wearable-summary .small {
-      color: #999;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .wearable-summary strong {
-      font-size: 1.65rem;
-      line-height: 1.15;
-    }
-
-    .wearable-summary p {
-      color: #bbb;
-      font-size: 0.92rem;
-    }
-
-    /* ACADEMIC CARD */
+    /* =========================
+       PROJECT 03 — ACADEMIC
+    ========================= */
 
     .academic-card {
-      min-height: 430px;
+      max-width: 1000px;
+      min-height: 330px;
       background: #deded9;
       border-radius: 8px;
-      padding: 50px;
+      padding: 45px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.25s ease;
+    }
+
+    .academic-card:hover {
+      transform: translateY(-4px);
     }
 
     .academic-card h4 {
-      max-width: 750px;
-      font-size: clamp(2.3rem, 4.5vw, 4.2rem);
+      max-width: 720px;
+      font-size: clamp(2.1rem, 4vw, 3.8rem);
       line-height: 1;
       letter-spacing: -2px;
     }
@@ -332,21 +378,23 @@
     .academic-areas {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      margin-top: 70px;
+      gap: 14px;
+      margin-top: 65px;
     }
 
     .academic-area {
       border-top: 1px solid #999;
-      padding-top: 15px;
-      font-size: 0.9rem;
+      padding-top: 13px;
+      font-size: 0.86rem;
     }
 
-    /* ABOUT */
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.65fr 1.35fr;
+      grid-template-columns: 0.55fr 1.45fr;
       gap: 100px;
     }
 
@@ -354,20 +402,23 @@
       font-size: clamp(1.8rem, 3.2vw, 3rem);
       line-height: 1.2;
       letter-spacing: -1px;
+      max-width: 820px;
     }
 
     .about-secondary {
       margin-top: 35px;
-      max-width: 700px;
+      max-width: 720px;
       color: #666;
       font-size: 1.05rem;
     }
 
-    /* RECOGNITION */
+    /* =========================
+       RECOGNITION
+    ========================= */
 
     .recognition {
       background: #181818;
-      color: white;
+      color: #ffffff;
     }
 
     .recognition .label {
@@ -386,19 +437,20 @@
 
     .recognition-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 65px;
-      align-items: stretch;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 70px;
+      align-items: center;
     }
 
     .recognition-photo {
       border-radius: 8px;
       overflow: hidden;
-      min-height: 560px;
+      max-height: 590px;
     }
 
     .recognition-photo img {
-      height: 100%;
+      width: 100%;
+      height: 590px;
       object-fit: cover;
       object-position: center;
     }
@@ -409,7 +461,7 @@
     }
 
     .award {
-      padding: 28px 0;
+      padding: 26px 0;
       border-top: 1px solid #444;
     }
 
@@ -424,7 +476,7 @@
     }
 
     .award h3 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       line-height: 1.25;
       margin-bottom: 6px;
     }
@@ -434,12 +486,14 @@
       font-size: 0.9rem;
     }
 
-    /* LEADERSHIP */
+    /* =========================
+       LEADERSHIP
+    ========================= */
 
     .leadership-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 70px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 75px;
       align-items: center;
     }
 
@@ -449,8 +503,10 @@
     }
 
     .leadership-photo img {
-      min-height: 500px;
+      width: 100%;
+      height: 500px;
       object-fit: cover;
+      object-position: center;
     }
 
     .leadership-copy h2 {
@@ -470,7 +526,7 @@
     }
 
     .leadership-item h3 {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       margin-bottom: 5px;
     }
 
@@ -478,7 +534,9 @@
       color: #666;
     }
 
-    /* CONTACT */
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
       background: #f5f5f3;
@@ -508,6 +566,7 @@
 
     .contact-links a {
       font-weight: 700;
+      transition: opacity 0.2s ease;
     }
 
     .contact-links a:hover {
@@ -519,7 +578,9 @@
       font-size: 0.85rem;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 35px;
@@ -531,12 +592,19 @@
       font-size: 0.8rem;
     }
 
-    /* RESPONSIVE */
+    /* =========================
+       RESPONSIVE
+    ========================= */
 
     @media (max-width: 800px) {
 
       .nav-links {
         display: none;
+      }
+
+      .section {
+        padding-top: 85px;
+        padding-bottom: 85px;
       }
 
       .hero {
@@ -564,7 +632,7 @@
         margin-top: 30px;
       }
 
-      .section-header p:last-child {
+      .section-header > p {
         margin-top: 25px;
       }
 
@@ -580,35 +648,39 @@
         justify-self: start;
       }
 
-      .ultrasound-flow,
+      .ultrasound-card {
+        min-height: 430px;
+        padding: 35px;
+      }
+
+      .ultrasound-top {
+        display: block;
+      }
+
+      .current-marker {
+        margin-top: 25px;
+      }
+
+      .ultrasound-flow {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 60px;
+      }
+
+      .wearable-preview {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+      }
+
+      .wearable-preview-image {
+        height: 285px;
+      }
+
       .academic-areas {
         grid-template-columns: 1fr 1fr;
       }
 
-      .wearable-collage {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-
-      .wearable-image.hardware,
-      .wearable-image.cad,
-      .wearable-image.result,
-      .wearable-summary {
-        grid-column: auto;
-        grid-row: auto;
-      }
-
-      .wearable-image {
-        height: 300px;
-      }
-
-      .wearable-summary {
-        min-height: 300px;
-      }
-
       .recognition-photo {
-        min-height: auto;
+        max-height: none;
       }
 
       .recognition-photo img {
@@ -616,7 +688,7 @@
       }
 
       .leadership-photo img {
-        min-height: auto;
+        height: auto;
       }
 
       .contact-links {
@@ -630,6 +702,33 @@
       footer {
         flex-direction: column;
         gap: 8px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .container {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      nav {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .hero h1 {
+        font-size: 4.2rem;
+        letter-spacing: -3px;
+      }
+
+      .ultrasound-flow,
+      .academic-areas {
+        grid-template-columns: 1fr;
+      }
+
+      .contact h2 {
+        letter-spacing: -3px;
       }
     }
   </style>
@@ -675,8 +774,10 @@
 
     <p class="hero-intro">
       Engineering at the intersection of
-      <strong>human movement, medical technology,
-      sensing, and mechanical design.</strong>
+      <strong>
+        human movement, medical technology,
+        sensing, and mechanical design.
+      </strong>
     </p>
 
     <p class="hero-focus">
@@ -700,18 +801,24 @@
 
       <div>
         <p class="label">Selected Work</p>
-        <h2>Engineering<br>Projects.</h2>
+        <h2>
+          Engineering<br>
+          Projects.
+        </h2>
       </div>
 
       <p>
-        Research and design work spanning biomedical imaging,
-        wearable sensing, biomechanics, and mechanical engineering.
+        Research and design work spanning ultrasound reconstruction,
+        wearable sensing, biomechanics, medical devices, and
+        mechanical engineering.
       </p>
 
     </div>
 
 
-    <!-- PROJECT 01 -->
+    <!-- ==================================================
+         01 — ULTRASOUND
+    =================================================== -->
 
     <article class="project">
 
@@ -749,10 +856,18 @@
 
         <div class="ultrasound-card">
 
-          <p class="ultrasound-question">
-            How can we reconstruct bone in 3D using ultrasound
-            while accurately tracking how the scanner moves?
-          </p>
+          <div class="ultrasound-top">
+
+            <p class="ultrasound-question">
+              How can we reconstruct bone in 3D using ultrasound
+              while accurately tracking how the scanner moves?
+            </p>
+
+            <span class="current-marker">
+              Current Research
+            </span>
+
+          </div>
 
 
           <div class="ultrasound-flow">
@@ -786,7 +901,9 @@
     </article>
 
 
-    <!-- PROJECT 02 -->
+    <!-- ==================================================
+         02 — WEARABLE SENSING
+    =================================================== -->
 
     <article class="project">
 
@@ -804,8 +921,8 @@
 
           <p>
             Designed and experimentally tested a wearable sensing
-            platform combining triboelectric generators and load cells
-            to characterize force–voltage behaviour during loading.
+            platform integrating triboelectric generators and load cells
+            to characterize force–voltage behaviour under loading.
           </p>
 
         </div>
@@ -820,57 +937,48 @@
       </div>
 
 
-      <a href="wearable-sensing.html">
+      <a
+        href="wearable-sensing.html"
+        class="wearable-preview"
+      >
 
-        <div class="wearable-collage">
+        <div class="wearable-preview-copy">
 
+          <div>
 
-          <div class="wearable-image hardware">
-
-            <img
-              src="images/teg-pads.png.png"
-              alt="Triboelectric sensing hardware"
-            >
-
-          </div>
-
-
-          <div class="wearable-image cad">
-
-            <img
-              src="images/teg-pads-cad.png.png"
-              alt="CAD design for triboelectric sensing system"
-            >
-
-          </div>
-
-
-          <div class="wearable-image result">
-
-            <img
-              src="images/channel-d.png.png"
-              alt="Force and voltage experimental results"
-            >
-
-          </div>
-
-
-          <div class="wearable-summary">
-
-            <span class="small">
-              Sensor → Design → Data
-            </span>
-
-            <strong>
-              Connecting mechanical loading to electrical response.
-            </strong>
-
-            <p>
-              Physical prototyping, instrumentation, experimental
-              testing, and quantitative biomechanical analysis.
+            <p class="wearable-preview-label">
+              Sensor Development
             </p>
 
+            <h4>
+              From physical sensor to measured response.
+            </h4>
+
           </div>
+
+
+          <div class="wearable-preview-bottom">
+
+            <p>
+              Sensor fabrication, wearable integration,
+              instrumentation, and experimental characterization.
+            </p>
+
+            <span>
+              Explore the research ↗
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="wearable-preview-image">
+
+          <img
+            src="images/teg-pads.png.png"
+            alt="Triboelectric generator sensing prototypes"
+          >
 
         </div>
 
@@ -879,7 +987,9 @@
     </article>
 
 
-    <!-- PROJECT 03 -->
+    <!-- ==================================================
+         03 — ACADEMIC PROJECTS
+    =================================================== -->
 
     <article class="project">
 
@@ -1021,7 +1131,7 @@
 
         <img
           src="images/3mt-pic.jpg"
-          alt="Malaina Choy receiving recognition for the Western Engineering Three Minute Thesis competition"
+          alt="Malaina Choy receiving recognition at the Western Engineering Three Minute Thesis competition"
         >
 
       </div>
@@ -1185,20 +1295,30 @@
 
       <div class="contact-links">
 
-        <!-- Add your LinkedIn URL when ready -->
-        <a href="#" target="_blank">
+        <!-- Replace # with your LinkedIn profile URL -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           LinkedIn ↗
         </a>
+
 
         <a
           href="https://github.com/malainachoy"
           target="_blank"
+          rel="noopener noreferrer"
         >
           GitHub ↗
         </a>
 
-        <!-- Replace # with your resume PDF filename when uploaded -->
-        <a href="#">
+
+        <!-- Replace # with the path to your resume PDF -->
+        <a
+          href="#"
+          target="_blank"
+        >
           Résumé ↗
         </a>
 
