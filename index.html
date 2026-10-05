@@ -19,15 +19,22 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: #202124;
+      color: #181818;
       background: #ffffff;
       line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
     nav {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
-      padding: 25px 30px;
+      padding: 28px 35px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -38,157 +45,396 @@
       letter-spacing: 1px;
     }
 
-    nav a {
-      color: #202124;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 0.95rem;
+    .nav-links {
+      display: flex;
+      gap: 28px;
     }
 
-    nav a:hover {
-      opacity: 0.6;
+    .nav-links a {
+      font-size: 0.92rem;
     }
 
-    .hero {
-      max-width: 1100px;
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+
+    /* GENERAL */
+
+    .container {
+      max-width: 1200px;
       margin: auto;
-      padding: 120px 30px 140px;
+      padding-left: 35px;
+      padding-right: 35px;
     }
 
-    .eyebrow {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
+    .section {
+      padding-top: 110px;
+      padding-bottom: 110px;
     }
 
-    h1 {
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      margin-bottom: 30px;
-    }
-
-    .hero-description {
-      max-width: 720px;
-      font-size: 1.35rem;
-      color: #555;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 30px;
+    .label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 18px;
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 40px;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 55px;
     }
 
-    .about {
-      max-width: 780px;
-      font-size: 1.15rem;
-      color: #444;
+    /* HERO */
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 80px;
+      padding-bottom: 100px;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .project {
-      border: 1px solid #ddd;
-      border-radius: 14px;
-      padding: 35px;
-      min-height: 270px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .project-number {
-      font-size: 0.85rem;
-      color: #777;
-      margin-bottom: 35px;
-      letter-spacing: 0.5px;
-    }
-
-    .project h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    .project-description {
-      color: #666;
-    }
-
-    .tags {
-      margin-top: 25px;
-      font-size: 0.85rem;
+    .hero-intro {
+      font-size: 1rem;
       font-weight: 600;
-      color: #333;
-    }
-
-    .recognition-item,
-    .leadership-item {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .recognition-item h3,
-    .leadership-item h3 {
-      font-size: 1.05rem;
-      margin-bottom: 4px;
-    }
-
-    .recognition-item p,
-    .leadership-item p {
-      color: #666;
-    }
-
-    footer {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 30px;
-      border-top: 1px solid #eee;
-    }
-
-    footer p {
-      color: #666;
       margin-bottom: 20px;
     }
 
-    footer a {
-      color: #202124;
-      margin-right: 25px;
-      text-decoration: none;
+    .hero h1 {
+      font-size: clamp(4.5rem, 11vw, 9rem);
+      line-height: 0.84;
+      letter-spacing: -7px;
+      margin-bottom: 45px;
+    }
+
+    .hero-description {
+      max-width: 780px;
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      line-height: 1.45;
+      color: #555;
+    }
+
+    /* SELECTED WORK */
+
+    .work-section {
+      background: #f5f5f3;
+    }
+
+    .project {
+      padding: 75px 0;
+      border-top: 1px solid #d2d2cf;
+    }
+
+    .project:last-child {
+      border-bottom: 1px solid #d2d2cf;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .project-number {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      max-width: 800px;
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .project-category {
+      text-align: right;
+      color: #777;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .project-visual {
+      overflow: hidden;
+      border-radius: 8px;
+      background: #e9e9e6;
+    }
+
+    .project-visual img {
+      width: 100%;
+      height: 550px;
+      display: block;
+      object-fit: contain;
+      padding: 35px;
+      transition: transform 0.45s ease;
+    }
+
+    .project-link:hover .project-visual img {
+      transform: scale(1.025);
+    }
+
+    .project-footer {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .project-description {
+      max-width: 680px;
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    .view-project {
+      font-weight: 700;
+      white-space: nowrap;
+      border-bottom: 1px solid #181818;
+    }
+
+    /* ULTRASOUND PLACEHOLDER */
+
+    .ultrasound-placeholder {
+      height: 500px;
+      background: #181818;
+      color: #ffffff;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      padding: 45px;
+    }
+
+    .placeholder-inner {
+      max-width: 650px;
+    }
+
+    .placeholder-small {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .placeholder-large {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    /* ACADEMIC PROJECTS CARD */
+
+    .academic-visual {
+      min-height: 460px;
+      border-radius: 8px;
+      background: #deded9;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 650px;
+    }
+
+    .academic-mini {
+      background: #ffffff;
+      padding: 25px;
+      min-height: 115px;
+      display: flex;
+      align-items: flex-end;
       font-weight: 600;
     }
 
-    footer a:hover {
-      opacity: 0.6;
+    .academic-note {
+      max-width: 650px;
+      font-size: 1.2rem;
     }
 
-    @media (max-width: 700px) {
-      .projects {
-        grid-template-columns: 1fr;
-      }
+    /* ABOUT */
 
-      h1 {
-        letter-spacing: -2px;
-      }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 100px;
+    }
 
-      nav .links {
+    .about-copy {
+      max-width: 720px;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .about-copy p + p {
+      margin-top: 25px;
+    }
+
+    /* RECOGNITION */
+
+    .recognition-section {
+      background: #181818;
+      color: #ffffff;
+    }
+
+    .recognition-section .label {
+      color: #aaa;
+    }
+
+    .recognition-item {
+      padding: 28px 0;
+      border-top: 1px solid #444;
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 30px;
+    }
+
+    .recognition-item:last-child {
+      border-bottom: 1px solid #444;
+    }
+
+    .recognition-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .recognition-detail {
+      color: #aaa;
+      text-align: right;
+    }
+
+    /* LEADERSHIP */
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .leadership-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 35px;
+      min-height: 190px;
+    }
+
+    .leadership-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .leadership-card p {
+      color: #666;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding-top: 130px;
+      padding-bottom: 130px;
+    }
+
+    .contact h2 {
+      max-width: 800px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 45px;
+    }
+
+    .contact p {
+      max-width: 650px;
+      color: #555;
+      font-size: 1.15rem;
+      margin-bottom: 35px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .contact-links a {
+      font-weight: 700;
+      border-bottom: 1px solid #181818;
+    }
+
+    /* FOOTER */
+
+    footer {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 35px 50px;
+      border-top: 1px solid #ddd;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-links {
         display: none;
       }
 
       .hero {
+        min-height: 70vh;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .project-header,
+      .project-footer {
+        flex-direction: column;
+      }
+
+      .project-category {
+        text-align: left;
+      }
+
+      .project-visual img {
+        height: auto;
+      }
+
+      .about-grid,
+      .recognition-item,
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 35px;
+      }
+
+      .recognition-detail {
+        text-align: left;
+      }
+
+      .academic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
         padding-top: 80px;
-        padding-bottom: 100px;
+        padding-bottom: 80px;
       }
     }
   </style>
@@ -199,23 +445,43 @@
   <!-- NAVIGATION -->
 
   <nav>
-    <div class="logo">MC</div>
 
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#recognition">Recognition</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#contact">Contact</a>
+    <a class="logo" href="#">
+      MC
+    </a>
+
+    <div class="nav-links">
+
+      <a href="#work">
+        Work
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#recognition">
+        Recognition
+      </a>
+
+      <a href="#leadership">
+        Leadership
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </div>
+
   </nav>
 
 
   <!-- HERO -->
 
-  <header class="hero">
+  <header class="hero container">
 
-    <p class="eyebrow">
+    <p class="hero-intro">
       Mechanical Engineering + Biomedical Engineering
     </p>
 
@@ -225,114 +491,266 @@
     </h1>
 
     <p class="hero-description">
-      Designing, building, and testing systems at the intersection of
-      robotics, biomechanics, and medical technology.
+      Designing and testing technologies at the intersection of
+      medical devices, biomechanics, robotics, and human health.
     </p>
 
   </header>
 
 
-  <!-- ABOUT -->
+  <!-- SELECTED WORK -->
 
-  <section id="about">
+  <section
+    class="section work-section"
+    id="work"
+  >
 
-    <h2 class="section-title">About Me</h2>
+    <div class="container">
 
-    <p class="about">
-      I'm a fifth-year Mechanical Engineering and Biomedical Engineering
-      student at Western University, graduating in May 2027. I'm interested
-      in developing medical and robotic technologies that combine mechanical
-      design, sensing, biomechanics, and experimental testing. My experience
-      ranges from biomedical research and robotic systems to wearable sensing
-      and mechanical design.
-    </p>
+      <p class="label">
+        Portfolio
+      </p>
+
+      <h2 class="section-title">
+        Selected Work
+      </h2>
+
+
+      <!-- PROJECT 01 -->
+
+      <article class="project">
+
+        <a
+          class="project-link"
+          href="wearable-sensing.html"
+        >
+
+          <div class="project-header">
+
+            <div>
+
+              <p class="project-number">
+                01 / RESEARCH
+              </p>
+
+              <h3>
+                Wearable Biomechanical Sensing
+              </h3>
+
+            </div>
+
+            <p class="project-category">
+              Biomedical Engineering<br>
+              Biomechanics
+            </p>
+
+          </div>
+
+
+          <div class="project-visual">
+
+            <img
+              src="images/sole-base.png.png"
+              alt="Wearable biomechanical sensing prototype"
+            >
+
+          </div>
+
+
+          <div class="project-footer">
+
+            <p class="project-description">
+              Design and experimental evaluation of a wearable
+              triboelectric sensing system for characterizing
+              force–voltage relationships during biomechanical loading.
+            </p>
+
+            <span class="view-project">
+              View Project →
+            </span>
+
+          </div>
+
+        </a>
+
+      </article>
+
+
+      <!-- PROJECT 02 -->
+
+      <article class="project">
+
+        <div class="project-header">
+
+          <div>
+
+            <p class="project-number">
+              02 / RESEARCH
+            </p>
+
+            <h3>
+              3D Ultrasound Reconstruction
+            </h3>
+
+          </div>
+
+          <p class="project-category">
+            Medical Technology<br>
+            Robotics
+          </p>
+
+        </div>
+
+
+        <div class="ultrasound-placeholder">
+
+          <div class="placeholder-inner">
+
+            <p class="placeholder-small">
+              Current Research
+            </p>
+
+            <p class="placeholder-large">
+              Developing and validating an ultrasound-based system
+              for 3D reconstruction of bone.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-footer">
+
+          <p class="project-description">
+            Research integrating robotic systems, motion tracking,
+            sensing, experimental validation, and quantitative analysis
+            for biomedical applications.
+          </p>
+
+          <span class="view-project">
+            Project Page Coming Soon
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 03 -->
+
+      <article class="project">
+
+        <div class="project-header">
+
+          <div>
+
+            <p class="project-number">
+              03 / ENGINEERING DESIGN
+            </p>
+
+            <h3>
+              Academic Engineering Projects
+            </h3>
+
+          </div>
+
+          <p class="project-category">
+            Mechanical +<br>
+            Biomedical
+          </p>
+
+        </div>
+
+
+        <div class="academic-visual">
+
+          <div class="academic-grid">
+
+            <div class="academic-mini">
+              Medical & Assistive Devices
+            </div>
+
+            <div class="academic-mini">
+              Mechanical Design
+            </div>
+
+            <div class="academic-mini">
+              Materials & Manufacturing
+            </div>
+
+            <div class="academic-mini">
+              Engineering Analysis
+            </div>
+
+          </div>
+
+          <p class="academic-note">
+            A collection of design, analysis, prototyping, and
+            problem-solving projects completed throughout my
+            Mechanical and Biomedical Engineering degrees.
+          </p>
+
+        </div>
+
+
+        <div class="project-footer">
+
+          <p class="project-description">
+            Projects spanning medical device design, CAD,
+            machine design, materials selection, kinematics,
+            and mechanical analysis.
+          </p>
+
+          <span class="view-project">
+            Project Collection Coming Soon
+          </span>
+
+        </div>
+
+      </article>
+
+    </div>
 
   </section>
 
 
-  <!-- PROJECTS -->
+  <!-- ABOUT -->
 
-  <section id="projects">
+  <section
+    class="section container"
+    id="about"
+  >
 
-    <h2 class="section-title">Selected Work</h2>
+    <div class="about-grid">
 
-    <div class="projects">
+      <div>
 
-      <!-- PROJECT 1 -->
-
-      <div class="project">
-
-        <p class="project-number">01 / RESEARCH</p>
-
-        <h3>3D Ultrasound Reconstruction</h3>
-
-        <p class="project-description">
-          Developing and validating an ultrasound-based system for
-          3D reconstruction of bone.
+        <p class="label">
+          About
         </p>
 
-        <p class="tags">
-          Robotics · ROS2 · Python · Sensor Integration · Experimental Validation
-        </p>
+        <h2>
+          Engineering with a human focus.
+        </h2>
 
       </div>
 
 
-      <!-- PROJECT 2 -->
+      <div class="about-copy">
 
-      <div class="project">
-
-        <p class="project-number">02 / RESEARCH</p>
-
-        <h3>Wearable Biomechanical Sensing</h3>
-
-        <p class="project-description">
-          Designed and prototyped a wearable sensing system to investigate
-          plantar loading during movement.
+        <p>
+          I'm a fifth-year Mechanical Engineering and Biomedical
+          Engineering student at Western University, graduating in
+          May 2027.
         </p>
 
-        <p class="tags">
-          Sensors · Prototyping · Biomechanics · Data Analysis
-        </p>
-
-      </div>
-
-
-      <!-- PROJECT 3 -->
-
-      <div class="project">
-
-        <p class="project-number">03 / MECHANICAL DESIGN</p>
-
-        <h3>Ski Lift Gearbox Design</h3>
-
-        <p class="project-description">
-          Designed and analyzed a mechanical gearbox system, including
-          component selection and CAD development.
-        </p>
-
-        <p class="tags">
-          SolidWorks · Mechanical Design · Component Selection · Analysis
-        </p>
-
-      </div>
-
-
-      <!-- PROJECT 4 -->
-
-      <div class="project">
-
-        <p class="project-number">04 / MECHANICAL DESIGN</p>
-
-        <h3>Dynamic Playground Structure</h3>
-
-        <p class="project-description">
-          Developed and modeled a dynamic mechanical structure through
-          an iterative engineering design process.
-        </p>
-
-        <p class="tags">
-          Mechanical Design · CAD · Engineering Analysis
+        <p>
+          I'm interested in developing medical technologies that
+          improve how we diagnose, treat, and support human movement
+          and health. My experience combines mechanical design with
+          biomechanics, sensing, robotics, prototyping, and
+          experimental validation.
         </p>
 
       </div>
@@ -344,34 +762,74 @@
 
   <!-- RECOGNITION -->
 
-  <section id="recognition">
+  <section
+    class="section recognition-section"
+    id="recognition"
+  >
 
-    <h2 class="section-title">Recognition</h2>
+    <div class="container">
 
-    <div class="recognition-item">
-      <h3>
-        First Place — Western Engineering Undergraduate Summer Research
-        Three Minute Thesis Competition
-      </h3>
-
-      <p>
-        Selected from approximately 60 undergraduate researchers across
-        Western University's Faculty of Engineering.
+      <p class="label">
+        Recognition
       </p>
-    </div>
 
-    <div class="recognition-item">
-      <h3>Dean's Honour List</h3>
-    </div>
+      <h2 class="section-title">
+        Awards & Honours
+      </h2>
 
-    <div class="recognition-item">
-      <h3>Andrea Bailey Memorial Award</h3>
-      <p>2024 & 2025</p>
-    </div>
 
-    <div class="recognition-item">
-      <h3>Lynda Diane Shaw Memorial Award</h3>
-      <p>2025</p>
+      <div class="recognition-item">
+
+        <p class="recognition-name">
+          First Place — Western Engineering Undergraduate
+          Summer Research Three Minute Thesis Competition
+        </p>
+
+        <p class="recognition-detail">
+          Approximately 60 undergraduate researchers
+        </p>
+
+      </div>
+
+
+      <div class="recognition-item">
+
+        <p class="recognition-name">
+          Dean's Honour List
+        </p>
+
+        <p class="recognition-detail">
+          Western University
+        </p>
+
+      </div>
+
+
+      <div class="recognition-item">
+
+        <p class="recognition-name">
+          Andrea Bailey Memorial Award
+        </p>
+
+        <p class="recognition-detail">
+          2024 & 2025
+        </p>
+
+      </div>
+
+
+      <div class="recognition-item">
+
+        <p class="recognition-name">
+          Lynda Diane Shaw Memorial Award
+        </p>
+
+        <p class="recognition-detail">
+          2025
+        </p>
+
+      </div>
+
     </div>
 
   </section>
@@ -379,21 +837,47 @@
 
   <!-- LEADERSHIP -->
 
-  <section id="leadership">
+  <section
+    class="section container"
+    id="leadership"
+  >
 
-    <h2 class="section-title">Leadership & Involvement</h2>
+    <p class="label">
+      Beyond the Lab
+    </p>
 
-    <div class="leadership-item">
-      <h3>True North Biomedical Competition</h3>
-      <p>Communications Commissioner</p>
-    </div>
+    <h2 class="section-title">
+      Leadership & Involvement
+    </h2>
 
-    <div class="leadership-item">
-      <h3>
-        Canadian Undergraduate Biomedical Engineering Council
-      </h3>
 
-      <p>Marketing Lead of Ontario</p>
+    <div class="leadership-grid">
+
+      <div class="leadership-card">
+
+        <h3>
+          True North Biomedical Competition
+        </h3>
+
+        <p>
+          Communications Commissioner
+        </p>
+
+      </div>
+
+
+      <div class="leadership-card">
+
+        <h3>
+          Canadian Undergraduate Biomedical Engineering Council
+        </h3>
+
+        <p>
+          Marketing Lead of Ontario
+        </p>
+
+      </div>
+
     </div>
 
   </section>
@@ -401,21 +885,45 @@
 
   <!-- CONTACT -->
 
-  <footer id="contact">
+  <section
+    class="contact container"
+    id="contact"
+  >
 
-    <h2 class="section-title">Let's Connect</h2>
-
-    <p>
-      I'm always interested in opportunities involving biomedical engineering,
-      robotics, mechanical design, and medical technology.
+    <p class="label">
+      Contact
     </p>
 
-    <a href="https://github.com/malainachoy" target="_blank">
-      GitHub
-    </a>
+    <h2>
+      Let's build something meaningful.
+    </h2>
 
-    <!-- We will add LinkedIn, email and your resume here next. -->
+    <p>
+      I'm interested in opportunities in biomedical engineering,
+      medical devices, biomechanics, robotics, and product development.
+    </p>
 
+
+    <div class="contact-links">
+
+      <a
+        href="https://github.com/malainachoy"
+        target="_blank"
+      >
+        GitHub
+      </a>
+
+      <!-- We'll add LinkedIn, email and resume next. -->
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Malaina Choy
   </footer>
 
 </body>
