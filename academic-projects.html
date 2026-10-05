@@ -29,6 +29,8 @@
       text-decoration: none;
     }
 
+    /* NAVIGATION */
+
     nav {
       max-width: 1200px;
       margin: auto;
@@ -51,11 +53,18 @@
       opacity: 0.55;
     }
 
+    /* GENERAL */
+
     .container {
       max-width: 1200px;
       margin: auto;
       padding-left: 35px;
       padding-right: 35px;
+    }
+
+    .section {
+      padding-top: 120px;
+      padding-bottom: 120px;
     }
 
     .label {
@@ -67,57 +76,17 @@
       margin-bottom: 18px;
     }
 
-    .hero {
-      padding-top: 110px;
-      padding-bottom: 120px;
-    }
-
-    .hero h1 {
-      max-width: 950px;
-      font-size: clamp(4rem, 9vw, 7.5rem);
-      line-height: 0.9;
-      letter-spacing: -5px;
-      margin-bottom: 40px;
-    }
-
-    .hero p {
-      max-width: 720px;
-      font-size: 1.35rem;
-      color: #555;
-    }
-
-    /* PROJECTS */
-
-    .project {
-      padding: 120px 0;
-      border-top: 1px solid #ddd;
-    }
-
-    .project-heading {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 80px;
-      margin-bottom: 65px;
-    }
-
-    .project-number {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #777;
-    }
-
-    .project h2 {
-      font-size: clamp(2.6rem, 5vw, 4.8rem);
+    h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
       line-height: 1;
       letter-spacing: -2px;
-      margin-bottom: 22px;
+      margin-bottom: 25px;
     }
 
-    .project-subtitle {
+    .body-copy {
       max-width: 720px;
+      font-size: 1.08rem;
       color: #555;
-      font-size: 1.1rem;
     }
 
     .tags {
@@ -134,56 +103,121 @@
       font-size: 0.82rem;
     }
 
-    /* GAIT */
+    /* HERO */
 
-    .gait-panel {
+    .hero {
+      padding-top: 110px;
+      padding-bottom: 130px;
+    }
+
+    .hero h1 {
+      max-width: 1000px;
+      font-size: clamp(4rem, 9vw, 7.5rem);
+      line-height: 0.9;
+      letter-spacing: -5px;
+      margin-bottom: 40px;
+    }
+
+    .hero-description {
+      max-width: 760px;
+      font-size: 1.35rem;
+      color: #555;
+    }
+
+    /* FEATURED INTRO */
+
+    .featured-heading {
+      padding-bottom: 55px;
+    }
+
+    .featured-heading h2 {
+      margin-bottom: 0;
+    }
+
+    /* FEATURED PROJECT */
+
+    .featured-project {
+      border-top: 1px solid #ddd;
+      padding-top: 100px;
+      padding-bottom: 120px;
+    }
+
+    .project-header {
+      display: grid;
+      grid-template-columns: 0.55fr 1.45fr;
+      gap: 80px;
+      margin-bottom: 65px;
+    }
+
+    .project-number {
+      color: #777;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .project-title h2 {
+      margin-bottom: 25px;
+    }
+
+    /* GAIT PROJECT */
+
+    .gait-visual {
       background: #181818;
       color: #ffffff;
-      padding: 55px;
       border-radius: 8px;
+      padding: 55px;
+    }
+
+    .gait-question {
+      max-width: 850px;
+      font-size: clamp(1.8rem, 3.5vw, 3.3rem);
+      line-height: 1.12;
+      letter-spacing: -1px;
+      margin-bottom: 55px;
     }
 
     .conditions {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-bottom: 50px;
+      gap: 12px;
+      margin-bottom: 55px;
     }
 
     .condition {
       border: 1px solid #555;
-      min-height: 180px;
       padding: 25px;
+      min-height: 175px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .condition-number {
+    .condition span:first-child {
       color: #888;
-      font-size: 0.8rem;
-    }
-
-    .condition-name {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .metrics-title {
-      color: #999;
       font-size: 0.75rem;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
+    }
+
+    .condition strong {
+      font-size: 1.45rem;
+    }
+
+    .measure-label {
+      color: #888;
+      font-size: 0.75rem;
       text-transform: uppercase;
+      letter-spacing: 1.4px;
       margin-bottom: 18px;
     }
 
-    .metrics {
+    .measures {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
     }
 
-    .metric {
+    .measure {
       border-top: 1px solid #555;
       padding-top: 15px;
       color: #ddd;
@@ -191,136 +225,223 @@
 
     /* BED EXIT */
 
-    .image-feature {
-      background: #f4f4f2;
+    .bed-exit-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .bed-exit-image {
+      background: #f5f5f3;
       border-radius: 8px;
       padding: 40px;
     }
 
-    .image-feature img {
+    .bed-exit-image img {
       width: 100%;
       display: block;
       object-fit: contain;
     }
 
-    .image-caption {
-      margin-top: 20px;
+    .design-points {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .design-point {
+      padding: 25px 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .design-point:last-child {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .design-point strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .design-point p {
       color: #666;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
-    /* ANALYSIS PROJECTS */
+    /* MECHANICAL SECTION */
 
-    .analysis-block {
+    .mechanical-section {
       background: #f5f5f3;
-      border-radius: 8px;
-      padding: 50px;
     }
 
-    .analysis-flow {
+    .mechanical-intro {
+      max-width: 800px;
+      margin-bottom: 70px;
+    }
+
+    .mechanical-intro p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .mechanical-project {
+      padding: 55px 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .mechanical-project:last-child {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .mechanical-grid {
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      gap: 70px;
+    }
+
+    .mechanical-project h3 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .mechanical-description {
+      color: #555;
+      font-size: 1.03rem;
+      max-width: 700px;
+    }
+
+    /* WORKFLOW */
+
+    .workflow {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap: 10px;
+      margin-top: 35px;
     }
 
-    .analysis-step {
+    .workflow-step {
       background: #ffffff;
-      padding: 25px;
-      min-height: 150px;
+      padding: 22px;
+      min-height: 120px;
     }
 
-    .step-number {
+    .workflow-number {
       display: block;
       color: #999;
-      font-size: 0.75rem;
-      margin-bottom: 35px;
+      font-size: 0.7rem;
+      margin-bottom: 25px;
     }
 
-    .analysis-step strong {
-      font-size: 1.05rem;
-    }
-
-    .analysis-step p {
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 8px;
+    .workflow-step strong {
+      font-size: 0.95rem;
     }
 
     /* SHEAR */
 
-    .additional-work {
-      background: #f5f5f3;
-    }
-
-    .additional-header {
-      margin-bottom: 60px;
-    }
-
-    .additional-header h2 {
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      letter-spacing: -2px;
-    }
-
-    .shear-grid {
+    .shear-images {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 12px;
+      margin-top: 35px;
     }
 
-    .shear-card {
+    .shear-image {
       background: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
+      padding: 20px;
+      border-radius: 6px;
     }
 
-    .shear-card img {
+    .shear-image img {
       width: 100%;
-      height: 330px;
+      height: 270px;
       object-fit: contain;
       display: block;
     }
 
-    .shear-description {
-      max-width: 700px;
-      margin-top: 35px;
-      color: #555;
-      font-size: 1.05rem;
+    /* SKILLS SUMMARY */
+
+    .skills-section {
+      background: #181818;
+      color: #ffffff;
     }
+
+    .skills-section .label {
+      color: #aaa;
+    }
+
+    .skills-section h2 {
+      max-width: 800px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 45px;
+    }
+
+    .skill {
+      padding: 9px 15px;
+      border: 1px solid #555;
+      border-radius: 100px;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
 
     footer {
       max-width: 1200px;
       margin: auto;
-      padding: 55px 35px;
+      padding: 60px 35px;
       border-top: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
     }
 
+    footer a {
+      font-weight: 600;
+    }
+
+    /* MOBILE */
+
     @media (max-width: 750px) {
 
       .hero h1 {
-        letter-spacing: -3px;
+        letter-spacing: -2.5px;
       }
 
-      .project-heading {
+      .project-header,
+      .bed-exit-layout,
+      .mechanical-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 30px;
       }
 
       .conditions,
-      .metrics,
-      .analysis-flow,
-      .shear-grid {
+      .measures,
+      .workflow,
+      .shear-images {
         grid-template-columns: 1fr;
       }
 
-      .project {
-        padding: 85px 0;
+      .section {
+        padding-top: 85px;
+        padding-bottom: 85px;
       }
 
-      .gait-panel,
-      .analysis-block {
+      .featured-project {
+        padding-top: 70px;
+        padding-bottom: 85px;
+      }
+
+      .gait-visual {
         padding: 30px;
+      }
+
+      .shear-image img {
+        height: auto;
       }
 
       footer {
@@ -334,147 +455,90 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+<!-- NAVIGATION -->
 
-  <nav>
+<nav>
 
-    <a class="logo" href="index.html">
-      MC
-    </a>
+  <a class="logo" href="index.html">
+    MC
+  </a>
 
-    <a class="back" href="index.html">
-      ← Back to Portfolio
-    </a>
+  <a class="back" href="index.html">
+    ← Back to Portfolio
+  </a>
 
-  </nav>
+</nav>
 
 
-  <!-- HERO -->
+<!-- HERO -->
 
-  <header class="hero container">
+<header class="hero container">
+
+  <p class="label">
+    Mechanical + Biomedical Engineering
+  </p>
+
+  <h1>
+    Academic<br>
+    Engineering<br>
+    Projects.
+  </h1>
+
+  <p class="hero-description">
+    Selected coursework demonstrating my experience in biomechanics,
+    medical device design, mechanical systems, materials selection,
+    CAD, and engineering analysis.
+  </p>
+
+</header>
+
+
+<!-- FEATURED PROJECTS -->
+
+<section class="container">
+
+  <div class="featured-heading">
 
     <p class="label">
-      Mechanical + Biomedical Engineering
+      Selected Projects
     </p>
 
-    <h1>
-      Academic<br>
-      Engineering<br>
-      Projects.
-    </h1>
+    <h2>
+      Biomedical & Biomechanics
+    </h2>
 
-    <p>
-      Selected coursework exploring biomechanics, medical device design,
-      mechanical systems, materials, and engineering analysis.
-    </p>
-
-  </header>
+  </div>
 
 
-  <!-- PROJECT 01 — BIOMECHANICS -->
+  <!-- GAIT -->
 
-  <section class="project">
+  <article class="featured-project">
 
-    <div class="container">
+    <div class="project-header">
 
-      <div class="project-heading">
+      <p class="project-number">
+        01 / BIOMECHANICS
+      </p>
 
-        <p class="project-number">
-          01 / BIOMECHANICS
+      <div class="project-title">
+
+        <h2>
+          Gait & Asymmetric Loading Analysis
+        </h2>
+
+        <p class="body-copy">
+          Investigated how different methods of carrying an external
+          load influence gait mechanics and postural asymmetry during
+          walking by comparing unloaded, backpack, and unilateral
+          side-bag conditions.
         </p>
 
-        <div>
+        <div class="tags">
 
-          <h2>
-            Gait & Asymmetric Loading Analysis
-          </h2>
-
-          <p class="project-subtitle">
-            Investigated how different load-carrying conditions influence
-            gait mechanics and postural asymmetry during walking.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Biomechanics</span>
-            <span class="tag">Gait Analysis</span>
-            <span class="tag">Human Movement</span>
-            <span class="tag">Data Analysis</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="gait-panel">
-
-        <div class="conditions">
-
-          <div class="condition">
-
-            <span class="condition-number">
-              CONDITION 01
-            </span>
-
-            <span class="condition-name">
-              Unloaded
-            </span>
-
-          </div>
-
-
-          <div class="condition">
-
-            <span class="condition-number">
-              CONDITION 02
-            </span>
-
-            <span class="condition-name">
-              Backpack
-            </span>
-
-          </div>
-
-
-          <div class="condition">
-
-            <span class="condition-number">
-              CONDITION 03
-            </span>
-
-            <span class="condition-name">
-              Side Bag
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <p class="metrics-title">
-          Biomechanical Measures Analyzed
-        </p>
-
-
-        <div class="metrics">
-
-          <div class="metric">
-            Shoulder Asymmetry
-          </div>
-
-          <div class="metric">
-            Pelvic Asymmetry
-          </div>
-
-          <div class="metric">
-            Lateral Trunk Lean
-          </div>
-
-          <div class="metric">
-            Gait Loading
-          </div>
+          <span class="tag">Biomechanics</span>
+          <span class="tag">Gait Analysis</span>
+          <span class="tag">Human Movement</span>
+          <span class="tag">Data Analysis</span>
 
         </div>
 
@@ -482,212 +546,383 @@
 
     </div>
 
-  </section>
+
+    <div class="gait-visual">
+
+      <p class="gait-question">
+        How does load placement influence asymmetry and
+        compensatory movement during walking?
+      </p>
 
 
-  <!-- PROJECT 02 — BED EXIT -->
+      <div class="conditions">
 
-  <section class="project">
+        <div class="condition">
+          <span>CONDITION 01</span>
+          <strong>Unloaded</strong>
+        </div>
 
-    <div class="container">
+        <div class="condition">
+          <span>CONDITION 02</span>
+          <strong>Backpack</strong>
+        </div>
 
-      <div class="project-heading">
-
-        <p class="project-number">
-          02 / MEDICAL DEVICE DESIGN
-        </p>
-
-        <div>
-
-          <h2>
-            Passive Bed-Exit Indicator
-          </h2>
-
-          <p class="project-subtitle">
-            Developed a passive mechanical concept for identifying changes
-            in patient position, with design decisions informed by the
-            intended healthcare environment and user needs.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Medical Device Design</span>
-            <span class="tag">Human-Centred Design</span>
-            <span class="tag">Mechanical Design</span>
-            <span class="tag">Design Requirements</span>
-
-          </div>
-
+        <div class="condition">
+          <span>CONDITION 03</span>
+          <strong>Side Bag</strong>
         </div>
 
       </div>
 
 
-      <div class="image-feature">
+      <p class="measure-label">
+        Measures Investigated
+      </p>
+
+
+      <div class="measures">
+
+        <div class="measure">
+          Shoulder Asymmetry
+        </div>
+
+        <div class="measure">
+          Pelvic Asymmetry
+        </div>
+
+        <div class="measure">
+          Lateral Trunk Lean
+        </div>
+
+        <div class="measure">
+          Gait Loading
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- BED EXIT -->
+
+  <article class="featured-project">
+
+    <div class="project-header">
+
+      <p class="project-number">
+        02 / MEDICAL DEVICE DESIGN
+      </p>
+
+      <div class="project-title">
+
+        <h2>
+          Passive Bed-Exit Indicator
+        </h2>
+
+        <p class="body-copy">
+          Developed a passive mechanical bed-exit indicator for a
+          healthcare setting in Northern Uganda. The project emphasized
+          designing around the needs of the intended users and
+          environment while minimizing reliance on complex electronics
+          and infrastructure.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Medical Device Design</span>
+          <span class="tag">Human-Centred Design</span>
+          <span class="tag">Mechanical Design</span>
+          <span class="tag">Design Requirements</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="bed-exit-layout">
+
+      <div class="bed-exit-image">
 
         <img
           src="images/bed-exit.png"
-          alt="Passive bed-exit indicator showing patient down and patient up states"
+          alt="Passive bed-exit indicator showing patient-down and patient-up configurations"
         >
 
-        <p class="image-caption">
-          Mechanical concept showing the indicator response between
-          patient-down and patient-up conditions.
-        </p>
+      </div>
+
+
+      <div class="design-points">
+
+        <div class="design-point">
+
+          <strong>
+            Passive Operation
+          </strong>
+
+          <p>
+            Mechanical operation reduces dependence on electronic
+            sensing and complex supporting infrastructure.
+          </p>
+
+        </div>
+
+
+        <div class="design-point">
+
+          <strong>
+            User-Focused Design
+          </strong>
+
+          <p>
+            Concept development considered the intended healthcare
+            setting, users, and practical operating constraints.
+          </p>
+
+        </div>
+
+
+        <div class="design-point">
+
+          <strong>
+            Position Indication
+          </strong>
+
+          <p>
+            The mechanism provides a visible change between
+            patient-down and patient-up states.
+          </p>
+
+        </div>
 
       </div>
 
     </div>
 
-  </section>
+  </article>
+
+</section>
 
 
-  <!-- PROJECT 03 — GEARBOX -->
+<!-- MECHANICAL ENGINEERING -->
 
-  <section class="project">
+<section class="section mechanical-section">
 
-    <div class="container">
+  <div class="container">
 
-      <div class="project-heading">
+    <div class="mechanical-intro">
 
-        <p class="project-number">
-          03 / MACHINE DESIGN
-        </p>
+      <p class="label">
+        Additional Coursework
+      </p>
+
+      <h2>
+        Mechanical Engineering Work
+      </h2>
+
+      <p>
+        Additional projects developed my experience in machine design,
+        materials selection, CAD, mechanism analysis, and engineering
+        decision-making.
+      </p>
+
+    </div>
+
+
+    <!-- GEARBOX -->
+
+    <article class="mechanical-project">
+
+      <div class="mechanical-grid">
 
         <div>
 
-          <h2>
+          <p class="label">
+            Machine Design
+          </p>
+
+          <h3>
             Ski Lift Gearbox Design
-          </h2>
-
-          <p class="project-subtitle">
-            Applied machine-design principles to develop a gearbox system,
-            using engineering calculations and component selection to meet
-            specified operating requirements.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">Machine Design</span>
-            <span class="tag">SolidWorks</span>
-            <span class="tag">Component Selection</span>
-            <span class="tag">Engineering Analysis</span>
-
-          </div>
+          </h3>
 
         </div>
 
-      </div>
-
-
-      <div class="analysis-block">
-
-        <div class="analysis-flow">
-
-          <div class="analysis-step">
-
-            <span class="step-number">
-              01
-            </span>
-
-            <strong>
-              Design Requirements
-            </strong>
-
-            <p>
-              Define operating conditions and system constraints.
-            </p>
-
-          </div>
-
-
-          <div class="analysis-step">
-
-            <span class="step-number">
-              02
-            </span>
-
-            <strong>
-              Gear Selection
-            </strong>
-
-            <p>
-              Determine suitable gear configuration and ratios.
-            </p>
-
-          </div>
-
-
-          <div class="analysis-step">
-
-            <span class="step-number">
-              03
-            </span>
-
-            <strong>
-              Component Analysis
-            </strong>
-
-            <p>
-              Size and evaluate mechanical components.
-            </p>
-
-          </div>
-
-
-          <div class="analysis-step">
-
-            <span class="step-number">
-              04
-            </span>
-
-            <strong>
-              Final Design
-            </strong>
-
-            <p>
-              Integrate selected components into the gearbox system.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROJECT 04 — MATERIALS -->
-
-  <section class="project">
-
-    <div class="container">
-
-      <div class="project-heading">
-
-        <p class="project-number">
-          04 / MATERIALS
-        </p>
 
         <div>
 
-          <h2>
-            Materials & Process Optimization
-          </h2>
-
-          <p class="project-subtitle">
-            Evaluated material and coating options for an engineering
-            application using performance requirements, material-selection
-            tools, and manufacturing considerations.
+          <p class="mechanical-description">
+            Designed a gearbox system for a ski-lift application using
+            mechanical design calculations, component selection, and
+            CAD. The project required translating operating requirements
+            into component-level design decisions and documenting the
+            resulting mechanical system.
           </p>
+
+
+          <div class="workflow">
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                01
+              </span>
+
+              <strong>
+                Requirements
+              </strong>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                02
+              </span>
+
+              <strong>
+                Component Selection
+              </strong>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                03
+              </span>
+
+              <strong>
+                Engineering Analysis
+              </strong>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                04
+              </span>
+
+              <strong>
+                CAD & Documentation
+              </strong>
+
+            </div>
+
+          </div>
+
 
           <div class="tags">
 
-            <span class="tag">Materials Selection</span>
+            <span class="tag">SolidWorks</span>
+            <span class="tag">Machine Design</span>
+            <span class="tag">Component Selection</span>
+            <span class="tag">Mechanical Analysis</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- MATERIALS -->
+
+    <article class="mechanical-project">
+
+      <div class="mechanical-grid">
+
+        <div>
+
+          <p class="label">
+            Materials
+          </p>
+
+          <h3>
+            Materials & Process Optimization
+          </h3>
+
+        </div>
+
+
+        <div>
+
+          <p class="mechanical-description">
+            Evaluated material and coating options for Maglin Site
+            Furniture using engineering requirements, material-selection
+            tools, and manufacturing considerations to develop a
+            justified material and process recommendation.
+          </p>
+
+
+          <div class="workflow">
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                01
+              </span>
+
+              <strong>
+                Define Requirements
+              </strong>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                02
+              </span>
+
+              <strong>
+                Material Screening
+              </strong>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                03
+              </span>
+
+              <strong>
+                Compare Trade-offs
+              </strong>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+              <span class="workflow-number">
+                04
+              </span>
+
+              <strong>
+                Recommend Solution
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="tags">
+
             <span class="tag">Granta</span>
+            <span class="tag">Materials Selection</span>
             <span class="tag">Coatings</span>
             <span class="tag">Manufacturing</span>
 
@@ -697,153 +932,132 @@
 
       </div>
 
+    </article>
 
-      <div class="analysis-block">
 
-        <div class="analysis-flow">
+    <!-- SHEAR -->
 
-          <div class="analysis-step">
+    <article class="mechanical-project">
 
-            <span class="step-number">
-              01
-            </span>
+      <div class="mechanical-grid">
 
-            <strong>
-              Requirements
-            </strong>
+        <div>
 
-            <p>
-              Identify mechanical, environmental, and manufacturing needs.
-            </p>
+          <p class="label">
+            Mechanism Design
+          </p>
+
+          <h3>
+            Shear Mechanism
+          </h3>
+
+        </div>
+
+
+        <div>
+
+          <p class="mechanical-description">
+            Developed and analyzed a mechanical shear mechanism using
+            CAD, analytical calculations, graphical methods, and motion
+            analysis to investigate mechanism geometry and movement.
+          </p>
+
+
+          <div class="shear-images">
+
+            <div class="shear-image">
+
+              <img
+                src="images/shear-drawings.png"
+                alt="Dimensioned engineering drawing of shear mechanism"
+              >
+
+            </div>
+
+
+            <div class="shear-image">
+
+              <img
+                src="images/shear-mechanism.png"
+                alt="CAD model of mechanical shear mechanism"
+              >
+
+            </div>
 
           </div>
 
 
-          <div class="analysis-step">
+          <div class="tags">
 
-            <span class="step-number">
-              02
-            </span>
-
-            <strong>
-              Screening
-            </strong>
-
-            <p>
-              Compare candidate materials against design constraints.
-            </p>
-
-          </div>
-
-
-          <div class="analysis-step">
-
-            <span class="step-number">
-              03
-            </span>
-
-            <strong>
-              Evaluation
-            </strong>
-
-            <p>
-              Assess material and coating trade-offs.
-            </p>
-
-          </div>
-
-
-          <div class="analysis-step">
-
-            <span class="step-number">
-              04
-            </span>
-
-            <strong>
-              Recommendation
-            </strong>
-
-            <p>
-              Select a material and process based on engineering criteria.
-            </p>
+            <span class="tag">CAD</span>
+            <span class="tag">Mechanism Design</span>
+            <span class="tag">Motion Analysis</span>
+            <span class="tag">Engineering Drawings</span>
 
           </div>
 
         </div>
 
       </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS SUMMARY -->
+
+<section class="section skills-section">
+
+  <div class="container">
+
+    <p class="label">
+      Across These Projects
+    </p>
+
+    <h2>
+      Engineering skills developed through design and analysis.
+    </h2>
+
+
+    <div class="skill-list">
+
+      <span class="skill">Biomechanics</span>
+      <span class="skill">Gait Analysis</span>
+      <span class="skill">Medical Device Design</span>
+      <span class="skill">Human-Centred Design</span>
+      <span class="skill">Mechanical Design</span>
+      <span class="skill">SolidWorks</span>
+      <span class="skill">Machine Design</span>
+      <span class="skill">Materials Selection</span>
+      <span class="skill">Granta</span>
+      <span class="skill">Engineering Analysis</span>
+      <span class="skill">Motion Analysis</span>
+      <span class="skill">Technical Documentation</span>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- ADDITIONAL DESIGN WORK -->
+<!-- FOOTER -->
 
-  <section class="project additional-work">
+<footer>
 
-    <div class="container">
+  <a href="index.html">
+    ← Back to Portfolio
+  </a>
 
-      <div class="additional-header">
+  <span>
+    Malaina Choy · Engineering Portfolio
+  </span>
 
-        <p class="label">
-          Additional Design Work
-        </p>
+</footer>
 
-        <h2>
-          Shear Mechanism
-        </h2>
-
-      </div>
-
-
-      <div class="shear-grid">
-
-        <div class="shear-card">
-
-          <img
-            src="images/shear-drawings.png"
-            alt="Dimensioned shear mechanism engineering drawing"
-          >
-
-        </div>
-
-
-        <div class="shear-card">
-
-          <img
-            src="images/shear-mechanism.png"
-            alt="CAD model of shear mechanism"
-          >
-
-        </div>
-
-      </div>
-
-
-      <p class="shear-description">
-        Mechanical design project exploring mechanism geometry and motion
-        through CAD development and analytical and graphical analysis.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <a href="index.html">
-      ← Back to Portfolio
-    </a>
-
-    <span>
-      Malaina Choy · Engineering Portfolio
-    </span>
-
-  </footer>
 
 </body>
 </html>
