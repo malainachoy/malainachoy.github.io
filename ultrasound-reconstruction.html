@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>3D Ultrasound Reconstruction | Malaina Choy</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #181818;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 28px 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .back {
+      font-size: 0.95rem;
+    }
+
+    .back:hover {
+      opacity: 0.55;
+    }
+
+    /* GENERAL */
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+
+    .section {
+      padding-top: 125px;
+      padding-bottom: 125px;
+    }
+
+    .label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+    }
+
+    .body-copy {
+      max-width: 720px;
+      font-size: 1.08rem;
+      color: #505050;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .hero h1 {
+      max-width: 1050px;
+      font-size: clamp(3.6rem, 8vw, 7.2rem);
+      line-height: 0.92;
+      letter-spacing: -5px;
+      margin-bottom: 40px;
+    }
+
+    .subtitle {
+      max-width: 800px;
+      font-size: 1.4rem;
+      color: #555;
+      margin-bottom: 50px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 65px;
+      flex-wrap: wrap;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
+    }
+
+    .meta-title {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin-bottom: 3px;
+    }
+
+    /* OPENING VISUAL */
+
+    .opening-visual {
+      background: #181818;
+      color: #ffffff;
+      padding: 85px 35px;
+    }
+
+    .opening-inner {
+      max-width: 1130px;
+      margin: auto;
+    }
+
+    .opening-small {
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.75rem;
+      margin-bottom: 25px;
+    }
+
+    .opening-statement {
+      max-width: 950px;
+      font-size: clamp(2rem, 4.5vw, 4.3rem);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    /* SYSTEM */
+
+    .system-section {
+      background: #f5f5f3;
+    }
+
+    .system-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 65px;
+    }
+
+    .system-step {
+      min-height: 220px;
+      background: #ffffff;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 4px;
+    }
+
+    .step-number {
+      color: #999;
+      font-size: 0.75rem;
+    }
+
+    .step-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .system-arrow {
+      margin-top: 25px;
+      color: #999;
+      font-size: 1.2rem;
+    }
+
+    /* VALIDATION */
+
+    .validation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 65px;
+    }
+
+    .validation-card {
+      border-top: 1px solid #bbb;
+      padding-top: 22px;
+    }
+
+    .validation-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .validation-card p {
+      color: #666;
+    }
+
+    /* IMPACT */
+
+    .impact {
+      background: #181818;
+      color: #ffffff;
+    }
+
+    .impact .label {
+      color: #aaa;
+    }
+
+    .impact .body-copy {
+      color: #d5d5d5;
+      font-size: 1.2rem;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 15px;
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      font-size: 0.9rem;
+    }
+
+    /* PRESENTATION */
+
+    .communication {
+      background: #f5f5f3;
+    }
+
+    .presentation-layout {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .presentation-photo img {
+      width: 100%;
+      max-height: 720px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* 3MT */
+
+    .award-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .award-photo img {
+      width: 100%;
+      max-height: 650px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .award-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 30px;
+    }
+
+    .award-copy {
+      color: #555;
+      font-size: 1.08rem;
+      max-width: 550px;
+    }
+
+    .award-stat {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    .award-stat strong {
+      display: block;
+      font-size: 2.4rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .award-stat span {
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 35px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer a {
+      font-weight: 600;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .two-column,
+      .system-flow,
+      .validation-grid,
+      .presentation-layout,
+      .award-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding-top: 85px;
+        padding-bottom: 85px;
+      }
+
+      .presentation-layout,
+      .award-layout {
+        gap: 40px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <a class="logo" href="index.html">
+    MC
+  </a>
+
+  <a class="back" href="index.html">
+    ← Back to Projects
+  </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero container">
+
+  <p class="label">
+    Biomedical Engineering · Current Research
+  </p>
+
+  <h1>
+    3D Freehand<br>
+    Ultrasound<br>
+    Reconstruction
+  </h1>
+
+  <p class="subtitle">
+    Developing and validating an ultrasound-based system for
+    3D reconstruction of bone.
+  </p>
+
+  <div class="project-meta">
+
+    <div>
+      <span class="meta-title">Institution</span>
+      Western University
+    </div>
+
+    <div>
+      <span class="meta-title">Research Area</span>
+      Biomedical Imaging
+    </div>
+
+    <div>
+      <span class="meta-title">Focus</span>
+      Bone Reconstruction
+    </div>
+
+    <div>
+      <span class="meta-title">Role</span>
+      Undergraduate Researcher
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- OPENING -->
+
+<section class="opening-visual">
+
+  <div class="opening-inner">
+
+    <p class="opening-small">
+      The Challenge
+    </p>
+
+    <p class="opening-statement">
+      How can we reconstruct bone in 3D using ultrasound
+      while accurately tracking how the scanner moves?
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- CLINICAL PROBLEM -->
+
+<section class="section container">
+
+  <div class="two-column">
+
+    <div>
+
+      <p class="label">
+        01 / The Clinical Problem
+      </p>
+
+      <h2>
+        Exploring radiation-free approaches to bone imaging.
+      </h2>
+
+    </div>
+
+    <div>
+
+      <p class="body-copy">
+        Bone assessment commonly relies on imaging modalities such as
+        X-ray and CT. Ultrasound provides a radiation-free alternative,
+        but creating a three-dimensional representation requires both
+        identifying bone within the ultrasound images and determining
+        where the scanner was positioned as those images were acquired.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROJECT GOAL -->
+
+<section class="section container">
+
+  <div class="two-column">
+
+    <div>
+
+      <p class="label">
+        02 / Project Goal
+      </p>
+
+      <h2>
+        Bringing imaging, tracking, and reconstruction together.
+      </h2>
+
+    </div>
+
+    <div>
+
+      <p class="body-copy">
+        My work focuses on developing and validating a system for
+        reconstructing three-dimensional bone geometry from freehand
+        ultrasound. The project integrates ultrasound imaging, motion
+        tracking, sensor data, robotic systems, and quantitative
+        validation into a unified experimental workflow.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SYSTEM DEVELOPMENT -->
+
+<section class="section system-section">
+
+  <div class="container">
+
+    <p class="label">
+      03 / System Development
+    </p>
+
+    <h2>
+      A multi-stage reconstruction workflow.
+    </h2>
+
+    <p class="body-copy">
+      The system combines multiple hardware and software components
+      required to acquire ultrasound data, estimate scanner motion,
+      identify bone, and reconstruct the resulting information in
+      three-dimensional space.
+    </p>
+
+
+    <div class="system-flow">
+
+      <div class="system-step">
+
+        <span class="step-number">
+          01
+        </span>
+
+        <div>
+
+          <p class="step-name">
+            Ultrasound Acquisition
+          </p>
+
+          <p class="system-arrow">
+            →
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="system-step">
+
+        <span class="step-number">
+          02
+        </span>
+
+        <div>
+
+          <p class="step-name">
+            Motion Tracking
+          </p>
+
+          <p class="system-arrow">
+            →
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="system-step">
+
+        <span class="step-number">
+          03
+        </span>
+
+        <div>
+
+          <p class="step-name">
+            Bone Segmentation
+          </p>
+
+          <p class="system-arrow">
+            →
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="system-step">
+
+        <span class="step-number">
+          04
+        </span>
+
+        <div>
+
+          <p class="step-name">
+            3D Reconstruction
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EXPERIMENTAL VALIDATION -->
+
+<section class="section container">
+
+  <p class="label">
+    04 / Experimental Validation
+  </p>
+
+  <h2>
+    Designing experiments around measurable system performance.
+  </h2>
+
+  <p class="body-copy">
+    A major part of my work involves developing repeatable experiments
+    to evaluate system performance against controlled reference
+    measurements. This enables sources of error to be identified,
+    quantified, and addressed through iterative system improvements.
+  </p>
+
+
+  <div class="validation-grid">
+
+    <div class="validation-card">
+
+      <h3>
+        Controlled Testing
+      </h3>
+
+      <p>
+        Design repeatable experiments that isolate and evaluate
+        system performance.
+      </p>
+
+    </div>
+
+
+    <div class="validation-card">
+
+      <h3>
+        Ground-Truth Comparison
+      </h3>
+
+      <p>
+        Compare measurements against robotic reference data to
+        quantify tracking and reconstruction performance.
+      </p>
+
+    </div>
+
+
+    <div class="validation-card">
+
+      <h3>
+        Iterative Improvement
+      </h3>
+
+      <p>
+        Investigate tracking, synchronization, sensor, and
+        data-quality issues to improve system reliability.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BIOMEDICAL SIGNIFICANCE -->
+
+<section class="section impact">
+
+  <div class="container">
+
+    <div class="two-column">
+
+      <div>
+
+        <p class="label">
+          05 / Biomedical Significance
+        </p>
+
+        <h2>
+          Toward practical 3D ultrasound of bone.
+        </h2>
+
+      </div>
+
+      <div>
+
+        <p class="body-copy">
+          Three-dimensional ultrasound has the potential to provide
+          radiation-free information about bone geometry while using
+          portable imaging technology. Developing reliable methods for
+          reconstruction and motion tracking could support future
+          applications in bone assessment and fracture monitoring.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="section container">
+
+  <div class="two-column">
+
+    <div>
+
+      <p class="label">
+        06 / Engineering Skills
+      </p>
+
+      <h2>
+        Systems, software, and experimental validation.
+      </h2>
+
+    </div>
+
+
+    <div class="skills">
+
+      <span class="skill">Python</span>
+      <span class="skill">ROS2</span>
+      <span class="skill">Robotics</span>
+      <span class="skill">Sensor Integration</span>
+      <span class="skill">Motion Tracking</span>
+      <span class="skill">Ultrasound Systems</span>
+      <span class="skill">Data Acquisition</span>
+      <span class="skill">Experimental Validation</span>
+      <span class="skill">System Troubleshooting</span>
+      <span class="skill">Data Analysis</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESEARCH COMMUNICATION -->
+
+<section class="section communication">
+
+  <div class="container">
+
+    <div class="presentation-layout">
+
+      <div>
+
+        <p class="label">
+          07 / Research Communication
+        </p>
+
+        <h2>
+          Communicating complex engineering research.
+        </h2>
+
+        <p class="body-copy">
+          Presented my work on 3D freehand ultrasound reconstruction
+          at Western Engineering's Undergraduate Summer Research
+          Symposium, communicating the technical development,
+          experimental approach, and biomedical motivation of the
+          project.
+        </p>
+
+      </div>
+
+
+      <div class="presentation-photo">
+
+        <img
+          src="images/ultrasound-pres.jpg"
+          alt="Presenting 3D freehand ultrasound reconstruction research at Western Engineering"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 3MT AWARD -->
+
+<section class="section container">
+
+  <div class="award-layout">
+
+    <div class="award-photo">
+
+      <img
+        src="images/3mt-pic.jpg"
+        alt="First Place award from Western Engineering Undergraduate Summer Research Three Minute Thesis competition"
+      >
+
+    </div>
+
+
+    <div>
+
+      <p class="label">
+        Research Recognition
+      </p>
+
+      <h2 class="award-title">
+        First Place — Three Minute Thesis
+      </h2>
+
+      <p class="award-copy">
+        Awarded First Place in Western Engineering's Undergraduate
+        Summer Research Three Minute Thesis competition for presenting
+        this research to a non-specialist audience in under three
+        minutes using a single static slide.
+      </p>
+
+
+      <div class="award-stat">
+
+        <strong>
+          ~60
+        </strong>
+
+        <span>
+          Undergraduate researchers across Western Engineering
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <a href="index.html">
+    ← All Projects
+  </a>
+
+  <span>
+    Malaina Choy · Engineering Portfolio
+  </span>
+
+</footer>
+
+
+</body>
+</html>
