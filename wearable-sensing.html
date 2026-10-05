@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Wearable Biomechanical Sensing | Malaina Choy</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 28px 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .back {
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back:hover {
+      opacity: 0.55;
+    }
+
+    /* GENERAL */
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+
+    .label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #6a6a6a;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+    }
+
+    .body-copy {
+      max-width: 720px;
+      font-size: 1.08rem;
+      color: #4d4d4d;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    .hero h1 {
+      max-width: 1000px;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 0.93;
+      letter-spacing: -5px;
+      margin-bottom: 40px;
+    }
+
+    .subtitle {
+      max-width: 800px;
+      font-size: 1.4rem;
+      color: #555;
+      margin-bottom: 50px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 70px;
+      flex-wrap: wrap;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
+    }
+
+    .meta-item span {
+      display: block;
+    }
+
+    .meta-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #777;
+      margin-bottom: 4px;
+    }
+
+    /* HERO IMAGE */
+
+    .hero-image {
+      max-width: 1200px;
+      margin: 20px auto 0;
+      padding: 0 35px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-height: 650px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* SECTIONS */
+
+    .section {
+      padding-top: 130px;
+      padding-bottom: 130px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    /* DESIGN */
+
+    .design-grid {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .design-grid img {
+      width: 100%;
+      border-radius: 7px;
+      display: block;
+    }
+
+    /* TESTING */
+
+    .testing {
+      background: #f5f5f3;
+    }
+
+    .testing-image {
+      margin-top: 65px;
+    }
+
+    .testing-image img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* RESULTS */
+
+    .results-image {
+      margin-top: 65px;
+    }
+
+    .results-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 45px;
+    }
+
+    .metric {
+      padding: 25px 0;
+      border-top: 2px solid #171717;
+    }
+
+    .metric-number {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .metric-label {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* IMPACT */
+
+    .impact {
+      background: #171717;
+      color: white;
+    }
+
+    .impact .label {
+      color: #aaa;
+    }
+
+    .impact .body-copy {
+      color: #d3d3d3;
+      font-size: 1.25rem;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 35px;
+    }
+
+    .skill {
+      padding: 9px 15px;
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      font-size: 0.9rem;
+    }
+
+    /* OUTCOME */
+
+    .outcome {
+      border-top: 1px solid #ddd;
+    }
+
+    /* FOOTER */
+
+    footer {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 35px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .design-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <a class="logo" href="index.html">
+    MC
+  </a>
+
+  <a class="back" href="index.html">
+    ← Back to Projects
+  </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero container">
+
+  <p class="label">
+    Biomedical Engineering · Research
+  </p>
+
+  <h1>
+    Wearable<br>
+    Biomechanical<br>
+    Sensing
+  </h1>
+
+  <p class="subtitle">
+    Force–voltage characterization of a wearable triboelectric
+    generator for biomechanical sensing.
+  </p>
+
+  <div class="project-meta">
+
+    <div class="meta-item">
+      <span class="meta-title">Institution</span>
+      <span>Western University</span>
+    </div>
+
+    <div class="meta-item">
+      <span class="meta-title">Lab</span>
+      <span>Knee Biomechanics Lab</span>
+    </div>
+
+    <div class="meta-item">
+      <span class="meta-title">Year</span>
+      <span>2025</span>
+    </div>
+
+    <div class="meta-item">
+      <span class="meta-title">Role</span>
+      <span>Undergraduate Researcher</span>
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- HERO IMAGE -->
+
+<div class="hero-image">
+
+  <img
+    src="images/wearable-design.png"
+    alt="Wearable biomechanical sensing prototype and design"
+  >
+
+</div>
+
+
+<!-- THE CHALLENGE -->
+
+<section class="section container">
+
+  <div class="two-column">
+
+    <div>
+
+      <p class="label">01 / The Challenge</p>
+
+      <h2>
+        Understanding sensor response under biomechanical loading.
+      </h2>
+
+    </div>
+
+    <div>
+
+      <p class="body-copy">
+        Triboelectric generators can convert mechanical loading into
+        electrical signals, creating opportunities for self-powered
+        biomechanical sensing. This project investigated the relationship
+        between applied force and generated voltage under dynamic loading
+        conditions using a wearable experimental platform.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DESIGN -->
+
+<section class="section container">
+
+  <p class="label">02 / Design & Prototyping</p>
+
+  <h2>
+    From sensing element to wearable prototype.
+  </h2>
+
+  <p class="body-copy">
+    I designed and fabricated a wearable prototype incorporating four
+    triboelectric sensing locations paired with load cells. The system
+    enabled simultaneous measurement of applied force and generated
+    voltage at different regions of the foot.
+  </p>
+
+  <div class="design-grid">
+
+    <img
+      src="images/wearable-design.png"
+      alt="TEG cells, CAD housing, sole design and prototype"
+    >
+
+    <img
+      src="images/wearable-assembly.png"
+      alt="Assembled wearable sensing system"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- TESTING -->
+
+<section class="section testing">
+
+  <div class="container">
+
+    <div class="two-column">
+
+      <div>
+
+        <p class="label">03 / Experimental Testing</p>
+
+        <h2>
+          Building a repeatable measurement setup.
+        </h2>
+
+      </div>
+
+      <div>
+
+        <p class="body-copy">
+          I developed and used an instrumented experimental setup to
+          acquire force and voltage measurements across four sensing
+          locations. Controlled testing was used to characterize sensor
+          behaviour and compare responses across the wearable system.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="testing-image">
+
+      <img
+        src="images/wearable-testing.png"
+        alt="Experimental electronics and measurement instrumentation"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESULTS -->
+
+<section class="section container">
+
+  <p class="label">04 / Results</p>
+
+  <h2>
+    Quantifying the relationship between force and voltage.
+  </h2>
+
+  <p class="body-copy">
+    Peak voltage generally increased with applied force, while the
+    magnitude of the response varied between sensing locations.
+    These differences highlighted the influence of local loading
+    conditions on sensor performance.
+  </p>
+
+  <div class="results-image">
+
+    <img
+      src="images/wearable-results.png"
+      alt="Force and voltage measurements across four sensing channels"
+    >
+
+  </div>
+
+
+  <div class="metrics">
+
+    <div class="metric">
+      <p class="metric-number">~9 V</p>
+      <p class="metric-label">at ~100 N · Channel A</p>
+    </div>
+
+    <div class="metric">
+      <p class="metric-number">~5 V</p>
+      <p class="metric-label">at ~100 N · Channel B</p>
+    </div>
+
+    <div class="metric">
+      <p class="metric-number">~15 V</p>
+      <p class="metric-label">at ~50 N · Channel C</p>
+    </div>
+
+    <div class="metric">
+      <p class="metric-number">~20 V</p>
+      <p class="metric-label">at ~100 N · Channel D</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- IMPACT -->
+
+<section class="section impact">
+
+  <div class="container">
+
+    <div class="two-column">
+
+      <div>
+
+        <p class="label">05 / Biomedical Significance</p>
+
+        <h2>
+          Toward self-powered load sensing.
+        </h2>
+
+      </div>
+
+      <div>
+
+        <p class="body-copy">
+          The wearable system demonstrated the feasibility of collecting
+          paired force–voltage measurements under dynamic loading
+          conditions. These data can support development of models that
+          estimate mechanical loading from triboelectric sensor output,
+          contributing toward the longer-term goal of self-powered load
+          sensing for smart orthopedic implants.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS + OUTCOME -->
+
+<section class="section container">
+
+  <div class="two-column">
+
+    <div>
+
+      <p class="label">06 / Skills</p>
+
+      <h2>
+        Engineering tools & methods.
+      </h2>
+
+    </div>
+
+    <div>
+
+      <div class="skills">
+
+        <span class="skill">Biomechanics</span>
+        <span class="skill">Wearable Sensors</span>
+        <span class="skill">Load Cells</span>
+        <span class="skill">Triboelectric Generators</span>
+        <span class="skill">CAD</span>
+        <span class="skill">Prototyping</span>
+        <span class="skill">Experimental Design</span>
+        <span class="skill">Data Acquisition</span>
+        <span class="skill">Data Analysis</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section container outcome">
+
+  <p class="label">Outcome</p>
+
+  <h2>
+    Presented at Western University's Undergraduate Summer
+    Research Symposium.
+  </h2>
+
+  <p class="body-copy">
+    The project was completed through Western Engineering's
+    undergraduate summer research program in 2025.
+  </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <a href="index.html">
+    ← All Projects
+  </a>
+
+  <span>
+    Malaina Choy · Engineering Portfolio
+  </span>
+
+</footer>
+
+
+</body>
+</html>
