@@ -445,14 +445,15 @@
     .recognition-photo {
       border-radius: 8px;
       overflow: hidden;
-      max-height: 590px;
+      max-height: 480px;
+      justify-self: center;
+      
     }
 
     .recognition-photo img {
       width: 100%;
-      height: 590px;
-      object-fit: cover;
-      object-position: center;
+      height: auto;
+      object-fit: contain;
     }
 
     .awards {
@@ -500,13 +501,14 @@
     .leadership-photo {
       border-radius: 8px;
       overflow: hidden;
+      align-self: center;
     }
 
     .leadership-photo img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      object-position: center;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+      }
     }
 
     .leadership-copy h2 {
@@ -533,7 +535,98 @@
     .leadership-item p {
       color: #666;
     }
+/* =========================
+   COMMUNITY INVOLVEMENT
+========================= */
 
+.community {
+  background: #ffffff;
+}
+
+.community-header {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 100px;
+  align-items: end;
+  margin-bottom: 65px;
+}
+
+.community-header h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #ccc;
+}
+
+.community-item {
+  padding: 30px 35px 20px 0;
+  min-height: 275px;
+}
+
+.community-item + .community-item {
+  border-left: 1px solid #ccc;
+  padding-left: 35px;
+}
+
+.community-number {
+  color: #999;
+  font-size: 0.72rem;
+  margin-bottom: 45px;
+}
+
+.community-item h3 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin-bottom: 7px;
+}
+
+.community-role {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 22px;
+}
+
+.community-description {
+  color: #666;
+  font-size: 0.92rem;
+  max-width: 310px;
+}
+
+
+/* COMMUNITY — MOBILE */
+
+@media (max-width: 800px) {
+
+  .community-header {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-item {
+    min-height: auto;
+    padding: 30px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .community-item + .community-item {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .community-number {
+    margin-bottom: 25px;
+  }
+
+}
     /* =========================
        CONTACT
     ========================= */
@@ -1130,7 +1223,7 @@
       <div class="recognition-photo">
 
         <img
-          src="images/3mt-pic.jpg"
+          src="images/awards.jpg"
           alt="Malaina Choy receiving recognition at the Western Engineering Three Minute Thesis competition"
         >
 
@@ -1274,7 +1367,97 @@
 
 </section>
 
+<!-- COMMUNITY INVOLVEMENT -->
 
+<section id="community" class="section community">
+
+  <div class="container">
+
+    <div class="community-header">
+
+      <p class="label">
+        Community Involvement
+      </p>
+
+      <h2>
+        Beyond engineering.
+      </h2>
+
+    </div>
+
+
+    <div class="community-grid">
+
+      <div class="community-item">
+
+        <p class="community-number">
+          01
+        </p>
+
+        <h3>
+          Private Tutoring
+        </h3>
+
+        <p class="community-role">
+          Mathematics & English
+        </p>
+
+        <p class="community-description">
+          Providing individualized academic support to help students
+          strengthen foundational skills and build confidence in their learning.
+        </p>
+
+      </div>
+
+
+      <div class="community-item">
+
+        <p class="community-number">
+          02
+        </p>
+
+        <h3>
+          Humane Society London & Middlesex
+        </h3>
+
+        <p class="community-role">
+          Volunteer
+        </p>
+
+        <p class="community-description">
+          Supporting local animal welfare initiatives and the Humane
+          Society's work within the London and Middlesex community.
+        </p>
+
+      </div>
+
+
+      <div class="community-item">
+
+        <p class="community-number">
+          03
+        </p>
+
+        <h3>
+          Alzheimer Society Southwest Partners
+        </h3>
+
+        <p class="community-role">
+          Volunteer
+        </p>
+
+        <p class="community-description">
+          Supporting community initiatives serving individuals living
+          with dementia and their families.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 <!-- CONTACT -->
 
 <section id="contact" class="section contact">
